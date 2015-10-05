@@ -11,7 +11,7 @@ This has directions and some sample code for the Soltis Lab coding group.
   Here's an example:
   ```
   try:
-	IN=open('MySequenceFile.txt, 'r')
+	IN=open('MySequenceFile.txt', 'r')
   except IOError:
 	print ("Can't open file.")
   ```
