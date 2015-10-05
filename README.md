@@ -13,7 +13,7 @@ This has directions and some sample code for the Soltis Lab coding group.
   try:
 	IN=open('MySequenceFile.txt, 'r')
   except IOError:
-	print "Can't open file."
+	print ("Can't open file.")
   ```
 4. Let's use argparse to take the filename from the command line.
 	Here's an example:
