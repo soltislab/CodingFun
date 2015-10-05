@@ -21,7 +21,7 @@ This has directions and some sample code for the Soltis Lab coding group.
   OutFile = args.o
   ```
 5. Let's use BioPython to read a fasta file and calculate %GC.
-  Here's an example:
+    Here's an example:
   ```
   IN=open(InFile, 'r')
   for record in SeqIO.parse(IN, "fasta") :
