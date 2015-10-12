@@ -38,3 +38,18 @@ This has directions and some sample code for the Soltis Lab coding group.
     		NumBase=record.seq.count(Base)
   ```
 
+
+## For Oct 12:
+
+1. Let's look at the code as well as play with Git and github.com to manage our code.
+2. You can make a clone of the github repo with:
+  ```git clone https://YOUR_GITHUB_ACCOUNT@github.com/soltislab/CodingFun.git```
+
+3. I'm going to add some comments to the code, but don't want to messs up the original, so I am going to make a brach of the code:
+  ```git checkout -b comments```
+
+4. That makes the branch on my computer, but I need to push it to github (the origin):
+  ```git push origin comments```
+
+
+
