@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 from Bio import SeqIO
-
+#Adding comments
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", help="Input file")
 
