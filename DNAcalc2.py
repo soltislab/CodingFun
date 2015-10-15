@@ -19,15 +19,15 @@ except IOError:
 for Record in SeqIO.parse(IN, "fasta") :
   DNAseq=Record.seq
   SeqLength=len(DNAseq)
-  
   GC_count=0
   
-  for Base in ('A','G','T','C', 'N'):
+  for Base in ('A','G','T','C', 'S', 'N'):
+  
     NumBase=DNAseq.count(Base)
     
     #print("Percent %s: %.2f" %(Base,NumBase/SeqLength*100))
     
-    if Base == "G" or Base == "C":
+    if Base == "G" or Base == "C" or Base == "S":
            GC_count+=NumBase
             
   #print ("Sequence is %d bp long" %(SeqLength))
