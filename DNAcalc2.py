@@ -41,7 +41,7 @@ for Record in SeqIO.parse(IN, "fasta") :
     if Base == "G" or Base == "C" or Base == "S":
 =======
 #Go through each base
-  for Base in ('A','G','T','C', 'N'):
+  for Base in ('A','G','T','C', 'N', '-'):
      #Count the number of times the base occurs
     NumBase=DNAseq.count.upper(Base)
     
