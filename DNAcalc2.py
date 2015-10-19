@@ -48,7 +48,7 @@ for Record in SeqIO.parse(IN, "fasta"):
 		elif Base == "G" or Base == "C":
 			GC_count += NumBase
 #End of 'for Base in loop'
-	Total = GC_count - Gap_count
+	Total = SeqLength - Gap_count
 			
 	print ("This sequence is %d nucleotides long." %(SeqLength))
 	print ("GC content of %s is %.2f" %(Record.id, (GC_count/SeqLength) * 100))
