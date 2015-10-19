@@ -30,18 +30,18 @@ for Record in SeqIO.parse(IN, "fasta") :
 #Get Length of sequence
   SeqLength=len(DNAseq)
   
-  GC_count=0
+  Missing_count=0
   
 #Go through each base
-  for Base in ('A','G','T','C', 'N'):
+  for Base in ('A','G','T','C', 'N','?'):
      #Count the number of times the base occurs
-    NumBase=DNAseq.count.upper(Base)
+    Missing_NumBase=DNAseq.count(Base)
     
     #print("Percent %s: %.2f" %(Base,NumBase/SeqLength*100))
     #Count Gs and Cs
-    if Base == "G" or Base == "C":
-           GC_count+=NumBase
+    if Base == "?":
+           Missing_count+=Missing_NumBase
     #End of for Base in loop.        
   #print ("Sequence is %d bp long" %(SeqLength))
-  print ("GC content of %s is %.2f" %(Record.id, GC_count/SeqLength*100))
+  print ("Missing data of %s is %.2f" %(Record.id, Missing_count/SeqLength*100))
   #End for Record in loop.
