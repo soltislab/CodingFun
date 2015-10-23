@@ -24,7 +24,7 @@ def GC(DNAseq):
  
   return(GC_count/SeqLength*100)
  
-if __name__ == "__main__":
+def main():
   InFile=sys.argv[1]
   try:
     IN=open(InFile, 'r')
@@ -35,3 +35,8 @@ if __name__ == "__main__":
     DNAseq=Record.seq
     MyGC=GC(DNAseq)
     print ("GC content of %s is %.2f" %(Record.id, MyGC))
+
+
+
+if __name__ == "__main__":
+  main()
