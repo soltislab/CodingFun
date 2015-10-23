@@ -9,10 +9,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-i", help="Input file")
 
 args = parser.parse_args()
-
-def countItems(Item,Seq):
-  ItemCount=Seq.count(Item)
-  return(ItemCount)
   
 #Put the -i argument in InFile
 InFile = args.i
