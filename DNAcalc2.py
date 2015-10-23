@@ -27,25 +27,25 @@ except IOError:
 #for Line in IN:
 #  Line=Line.strip('\n')
 
+
 #New code to use BioPython to read a fasta file
 for Record in SeqIO.parse(IN, "fasta") :
   DNAseq=Record.seq
+  GC_count=0
   
-#Get Length of sequence
+  #Get Length of sequence
   SeqLength=len(DNAseq)
   
-  Missing_count=0
-  
-#Go through each base
-  for Base in ('A','G','T','C', 'N','?'):
-     #Count the number of times the base occurs
-    Missing_NumBase=countItems(Base,DNAseq)
-    
+  #Go through each base
+  for Base in ('A','G','T','C', 'S', 'N'):
+    #Count the number of times the base occurs
+    NumBase=DNAseq.count(Base)
+
     #print("Percent %s: %.2f" %(Base,NumBase/SeqLength*100))
-    #Count Gs and Cs
-    if Base == "?":
-           Missing_count+=Missing_NumBase
-    #End of for Base in loop.        
-  #print ("Sequence is %d bp long" %(SeqLength))
-  print ("Missing data of %s is %.2f" %(Record.id, Missing_count/SeqLength*100))
-  #End for Record in loop.
+
+    if Base == "G" or Base == "C" or Base == "S":
+      GC_count+=NumBase
+   #End of for Base in loop.        
+ 
+  print ("GC content of %s is %.2f" %(Record.id, GC_count/SeqLength*100))
+#End for Record in loop.
