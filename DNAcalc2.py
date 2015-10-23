@@ -10,6 +10,10 @@ parser.add_argument("-i", help="Input file")
 
 args = parser.parse_args()
 
+def countItems(Item,Seq):
+  ItemCount=Seq.count(Item)
+  return(ItemCount)
+  
 #Put the -i argument in InFile
 InFile = args.i
 
@@ -29,28 +33,19 @@ for Record in SeqIO.parse(IN, "fasta") :
   
 #Get Length of sequence
   SeqLength=len(DNAseq)
-  GC_count=0
   
-<<<<<<< HEAD
-  for Base in ('A','G','T','C', 'S', 'N'):
+  Missing_count=0
   
-    NumBase=DNAseq.count(Base)
-    
-    #print("Percent %s: %.2f" %(Base,NumBase/SeqLength*100))
-    
-    if Base == "G" or Base == "C" or Base == "S":
-=======
 #Go through each base
-  for Base in ('A','G','T','C', 'N'):
+  for Base in ('A','G','T','C', 'N','?'):
      #Count the number of times the base occurs
-    NumBase=DNAseq.count.upper(Base)
+    Missing_NumBase=countItems(Base,DNAseq)
     
     #print("Percent %s: %.2f" %(Base,NumBase/SeqLength*100))
     #Count Gs and Cs
-    if Base == "G" or Base == "C":
->>>>>>> 66bd4f75f64beddae2cc8401dc59b937c5ab7e69
-           GC_count+=NumBase
+    if Base == "?":
+           Missing_count+=Missing_NumBase
     #End of for Base in loop.        
   #print ("Sequence is %d bp long" %(SeqLength))
-  print ("GC content of %s is %.2f" %(Record.id, GC_count/SeqLength*100))
+  print ("Missing data of %s is %.2f" %(Record.id, Missing_count/SeqLength*100))
   #End for Record in loop.
